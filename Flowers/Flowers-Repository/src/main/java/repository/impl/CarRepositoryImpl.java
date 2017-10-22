@@ -15,11 +15,11 @@ public class CarRepositoryImpl extends BaseDao implements CarRepository {
 	@Override
 	public List<Car> findAll() {
 		List<Car> car = new ArrayList<>();
-		ResultSet rs=(ResultSet) super.execute("SELECT * FROM car");
-		if(rs != null) {
+		ResultSet rs = (ResultSet) super.execute("SELECT * FROM car");
+		if (rs != null) {
 			try {
-				while(rs.next()) {
-					
+				while (rs.next()) {
+					car.add(new Car(rs.getInt(1), rs.getInt(2), rs.getInt(3)));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -27,7 +27,7 @@ public class CarRepositoryImpl extends BaseDao implements CarRepository {
 			}
 		}
 
-		return null;
+		return car;
 	}
 
 	@Override

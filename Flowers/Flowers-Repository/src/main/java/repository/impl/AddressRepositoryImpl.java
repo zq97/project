@@ -1,5 +1,8 @@
 package repository.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import domain.Address;
@@ -7,31 +10,42 @@ import domain.User;
 import repository.AddressRepository;
 import repository.BaseDao;
 
-public class AddressRepositoryImpl extends BaseDao implements AddressRepository{
-
+public class AddressRepositoryImpl extends BaseDao implements AddressRepository {
 
 	@Override
 	public List<Address> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Address> address = new ArrayList<>();
+		ResultSet rs = (ResultSet) super.execute("SELECT * FROM address");
+		if (rs != null) {
+			try {
+				while (rs.next()) {
+					address.add(new Address(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4),
+							rs.getString(5), rs.getString(6)));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return address;
 	}
 
 	@Override
 	public void update(Address address) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(int aid) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void add(Address address, User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

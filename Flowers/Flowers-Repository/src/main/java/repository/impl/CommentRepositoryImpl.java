@@ -1,5 +1,8 @@
 package repository.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import domain.Comment;
@@ -8,26 +11,37 @@ import domain.User;
 import repository.BaseDao;
 import repository.CommentRepository;
 
-public class CommentRepositoryImpl extends BaseDao implements CommentRepository{
-
-	
+public class CommentRepositoryImpl extends BaseDao implements CommentRepository {
 
 	@Override
 	public List<Comment> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Comment> comment = new ArrayList<>();
+		ResultSet rs = (ResultSet) super.execute("SELECT * FROM comment");
+		if (rs != null) {
+			try {
+				while (rs.next()) {
+					comment.add(
+							new Comment(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getTimestamp(4), rs.getString(5)));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return comment;
 	}
 
 	@Override
 	public void delete(int coid) {
-		// TODO Auto-generated method stub
-		
+		super.execute("DELETE FROM comment where coid = ?", coid);
+
 	}
 
 	@Override
 	public void save(Comment comment, User user, Product product) {
-		// TODO Auto-generated method stub
-		
+		super.execute("INSERT INTO comment(uid,pid,ctime,ccontent) values(?,?,?,?)", user.getUid(), product.getPid(),
+				comment.getCtime(), comment.getCcontent());
+
 	}
 
 }
