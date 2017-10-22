@@ -34,7 +34,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.zq</groupId>
-			<artifactId>Flowers-Service</artifactId>
+			<artifactId>Flowers-Repository</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>

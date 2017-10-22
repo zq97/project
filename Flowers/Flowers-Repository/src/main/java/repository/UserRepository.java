@@ -7,6 +7,6 @@ import domain.User;
 public interface UserRepository {
 	public void add(User user);
 	public List<User> findAll();
-	public void update(int uid);
+	public void update(User user);
 
 }

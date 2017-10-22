@@ -10,9 +10,6 @@
         <dependent-module archiveName="Flowers-Domain-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Flowers-Domain/Flowers-Domain">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Flowers-Service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Flowers-Service/Flowers-Service">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="Flowers-Repository-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Flowers-Repository/Flowers-Repository">
             <dependency-type>uses</dependency-type>
         </dependent-module>
