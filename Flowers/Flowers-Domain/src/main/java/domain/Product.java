@@ -13,9 +13,6 @@ public class Product {
 	private int prnum;    //商品库存数量
 	private int kid;      //商品种类，外键
 	private double insertCost;    //商品进货价
-	private Type type;    
-	private Kind kind;
-	private Picture picture;
 	public Product() {
 		super();
 	}
@@ -33,10 +30,7 @@ public class Product {
 		this.prnum = prnum;
 		this.kid = kid;
 		this.insertCost = insertCost;
-		this.type = type;
-		this.kind = kind;
-		this.picture = picture;
-	}
+			}
 	public Product(int pid, String pname, int pstate, int tid, String pinfo, int psimg, int pbimg, double pcost,
 			int psnum, int prnum, int kid, double insertCost, Type type, Kind kind, Picture picture) {
 		super();
@@ -52,9 +46,7 @@ public class Product {
 		this.prnum = prnum;
 		this.kid = kid;
 		this.insertCost = insertCost;
-		this.type = type;
-		this.kind = kind;
-		this.picture = picture;
+		
 	}
 	public int getPid() {
 		return pid;
@@ -128,30 +120,14 @@ public class Product {
 	public void setInsertCost(double insertCost) {
 		this.insertCost = insertCost;
 	}
-	public Type getType() {
-		return type;
-	}
-	public void setType(Type type) {
-		this.type = type;
-	}
-	public Kind getKind() {
-		return kind;
-	}
-	public void setKind(Kind kind) {
-		this.kind = kind;
-	}
-	public Picture getPicture() {
-		return picture;
-	}
-	public void setPicture(Picture picture) {
-		this.picture = picture;
-	}
 	@Override
 	public String toString() {
 		return "Product [pid=" + pid + ", pname=" + pname + ", pstate=" + pstate + ", tid=" + tid + ", pinfo=" + pinfo
 				+ ", psimg=" + psimg + ", pbimg=" + pbimg + ", pcost=" + pcost + ", psnum=" + psnum + ", prnum=" + prnum
-				+ ", kid=" + kid + ", insertCost=" + insertCost + ", picture=" + picture + "]";
+				+ ", kid=" + kid + ", insertCost=" + insertCost + "]";
 	}
+	
+	
 	
 
 }

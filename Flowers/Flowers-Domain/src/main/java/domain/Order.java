@@ -11,8 +11,6 @@ public class Order {
 	private int aid;  
 	private int ostate;
 	private Timestamp otime;  //订单时间
-	private User user;    
-	private Address address;
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -25,9 +23,7 @@ public class Order {
 		this.aid = aid;
 		this.ostate = ostate;
 		this.otime = otime;
-		this.user = user;
-		this.address = address;
-	}
+			}
 	public Order(int oid, int onum, int uid, double ototal, int aid, int ostate, Timestamp otime, User user,
 			Address address) {
 		super();
@@ -38,9 +34,7 @@ public class Order {
 		this.aid = aid;
 		this.ostate = ostate;
 		this.otime = otime;
-		this.user = user;
-		this.address = address;
-	}
+			}
 	public int getOid() {
 		return oid;
 	}
@@ -83,19 +77,7 @@ public class Order {
 	public void setOtime(Timestamp otime) {
 		this.otime = otime;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	@Override
+		@Override
 	public String toString() {
 		return "Order [oid=" + oid + ", onum=" + onum + ", uid=" + uid + ", ototal=" + ototal + ", aid=" + aid
 				+ ", ostate=" + ostate + ", otime=" + otime + "]";

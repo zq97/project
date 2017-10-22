@@ -42,12 +42,14 @@
 					<groupId>javax.servlet</groupId>
 				</exclusion>
 			</exclusions>
+			
 		</dependency>
 		<dependency>
-		<groupId>com.zq</groupId>
-    <artifactId>Flowers-Controller</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+			<groupId>com.zq</groupId>
+			<artifactId>Flowers-Controller</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
   </dependencies>
   <build>
     <finalName>Flowers-Web</finalName>
