@@ -8,11 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>Flowers-Controller</artifactId>
-  <name>Flowers-Controller</name>
+  <packaging>war</packaging>
+  <name>Flowers-Controller Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -20,8 +18,7 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-		<dependency>
+    <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
@@ -38,4 +35,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>
+  <build>
+    <finalName>Flowers-Controller</finalName>
+  </build>
 </project>

@@ -5,7 +5,6 @@ public class Car {
 	private int carid;
 	private int pid;
 	private int num;
-	private Product product;
 	public Car() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -14,15 +13,13 @@ public class Car {
 		super();
 		this.pid = pid;
 		this.num = num;
-		this.product = product;
 	}
 	public Car(int carid, int pid, int num, Product product) {
 		super();
 		this.carid = carid;
 		this.pid = pid;
 		this.num = num;
-		this.product = product;
-	}
+			}
 	public int getCarid() {
 		return carid;
 	}
@@ -41,12 +38,7 @@ public class Car {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+	
 	@Override
 	public String toString() {
 		return "Car [carid=" + carid + ", pid=" + pid + ", num=" + num + "]";

@@ -9,9 +9,7 @@ public class Comment {
 	private int pid;     //商品id
 	private Timestamp ctime;    //评论时间
 	private String ccontent;    //评论内容
-	private User user;
-	private Product product;
-	public Comment() {
+		public Comment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -21,9 +19,7 @@ public class Comment {
 		this.pid = pid;
 		this.ctime = ctime;
 		this.ccontent = ccontent;
-		this.user = user;
-		this.product = product;
-	}
+			}
 	public Comment(int coid, int uid, int pid, Timestamp ctime, String ccontent, User user, Product product) {
 		super();
 		this.coid = coid;
@@ -31,8 +27,7 @@ public class Comment {
 		this.pid = pid;
 		this.ctime = ctime;
 		this.ccontent = ccontent;
-		this.user = user;
-		this.product = product;
+		
 	}
 	public int getCoid() {
 		return coid;
@@ -64,19 +59,7 @@ public class Comment {
 	public void setCcontent(String ccontent) {
 		this.ccontent = ccontent;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-	@Override
+		@Override
 	public String toString() {
 		return "Comment [coid=" + coid + ", uid=" + uid + ", pid=" + pid + ", ctime=" + ctime + ", ccontent=" + ccontent
 				+ "]";
