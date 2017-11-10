@@ -1,6 +1,12 @@
 package domain;
 
-public class Kind {
+import java.io.Serializable;
+
+public class Kind implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int kid;
 	private String kname;
 

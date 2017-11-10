@@ -1,8 +1,15 @@
 package domain;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int carid;
-	private int pid;
+	private Product product;
+	private User user;
 	private int num;
 
 	public Car() {
@@ -10,16 +17,18 @@ public class Car {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Car(int pid, int num) {
+	public Car(Product product, User user, int num) {
 		super();
-		this.pid = pid;
+		this.product = product;
+		this.user = user;
 		this.num = num;
 	}
 
-	public Car(int carid, int pid, int num) {
+	public Car(int carid, Product product, User user, int num) {
 		super();
 		this.carid = carid;
-		this.pid = pid;
+		this.product = product;
+		this.user = user;
 		this.num = num;
 	}
 
@@ -31,12 +40,20 @@ public class Car {
 		this.carid = carid;
 	}
 
-	public int getPid() {
-		return pid;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public int getNum() {
@@ -47,9 +64,13 @@ public class Car {
 		this.num = num;
 	}
 
-	@Override
-	public String toString() {
-		return "Car [carid=" + carid + ", pid=" + pid + ", num=" + num + "]";
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Car [carid=" + carid + ", product=" + product + ", user=" + user + ", num=" + num + "]";
+	}
+	
 }

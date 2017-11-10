@@ -1,38 +1,42 @@
 package domain;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Order {
+public class Order implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int oid; // 订单id
 	private int onum; // 订单号
-	private int uid; // 购买人(user类)id 外键
-	private double ototal; //
-	private int aid;
-	private int ostate;
+	private User user; // 购买人, 外键
+	private double ototal; //商品总价
+	private Address address;      //地址，外键
+	private int ostate;     //付款状态
 	private Timestamp otime; // 订单时间
 
 	public Order() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Order(int onum, int uid, double ototal, int aid, int ostate, Timestamp otime) {
+	public Order(int onum, User user, double ototal, Address address, int ostate, Timestamp otime) {
 		super();
 		this.onum = onum;
-		this.uid = uid;
+		this.user = user;
 		this.ototal = ototal;
-		this.aid = aid;
+		this.address = address;
 		this.ostate = ostate;
 		this.otime = otime;
 	}
 
-	public Order(int oid, int onum, int uid, double ototal, int aid, int ostate, Timestamp otime) {
+	public Order(int oid, int onum, User user, double ototal, Address address, int ostate, Timestamp otime) {
 		super();
 		this.oid = oid;
 		this.onum = onum;
-		this.uid = uid;
+		this.user = user;
 		this.ototal = ototal;
-		this.aid = aid;
+		this.address = address;
 		this.ostate = ostate;
 		this.otime = otime;
 	}
@@ -53,12 +57,12 @@ public class Order {
 		this.onum = onum;
 	}
 
-	public int getUid() {
-		return uid;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public double getOtotal() {
@@ -69,12 +73,12 @@ public class Order {
 		this.ototal = ototal;
 	}
 
-	public int getAid() {
-		return aid;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAid(int aid) {
-		this.aid = aid;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public int getOstate() {
@@ -95,8 +99,9 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [oid=" + oid + ", onum=" + onum + ", uid=" + uid + ", ototal=" + ototal + ", aid=" + aid
+		return "Order [oid=" + oid + ", onum=" + onum + ", user=" + user + ", ototal=" + ototal + ", address=" + address
 				+ ", ostate=" + ostate + ", otime=" + otime + "]";
 	}
+	
 
 }

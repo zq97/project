@@ -1,53 +1,56 @@
 package domain;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int pid;
 	private String pname; // 商品名
 	private int pstate; // 0为销售，1为下架，2为推荐
-	private int tid; // 商品类别id，外键
+	private Type type; // 商品类别，外键
 	private String pinfo; // 商品描述
-	private int psimg; // 小图片，外键
-	private int pbimg; // 大图片，外键
+	private Picture picture; // 图片，外键
 	private double pcost; // 商品价格
 	private int psnum; // 商品销售数量
 	private int prnum; // 商品库存数量
-	private int kid; // 商品种类，外键
+	private Kind kind; // 商品种类，外键
 	private double insertCost; // 商品进货价
 
 	public Product() {
 		super();
 	}
 
-	public Product(String pname, int pstate, int tid, String pinfo, int psimg, int pbimg, double pcost, int psnum,
-			int prnum, int kid, double insertCost) {
+	public Product(String pname, int pstate, Type type, String pinfo, Picture picture, double pcost, int psnum,
+			int prnum, Kind kind, double insertCost) {
 		super();
 		this.pname = pname;
 		this.pstate = pstate;
-		this.tid = tid;
+		this.type = type;
 		this.pinfo = pinfo;
-		this.psimg = psimg;
-		this.pbimg = pbimg;
+		this.picture = picture;
 		this.pcost = pcost;
 		this.psnum = psnum;
 		this.prnum = prnum;
-		this.kid = kid;
+		this.kind = kind;
 		this.insertCost = insertCost;
 	}
 
-	public Product(int pid, String pname, int pstate, int tid, String pinfo, int psimg, int pbimg, double pcost,
-			int psnum, int prnum, int kid, double insertCost) {
+	public Product(int pid, String pname, int pstate, Type type, String pinfo, Picture picture, double pcost, int psnum,
+			int prnum, Kind kind, double insertCost) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
 		this.pstate = pstate;
-		this.tid = tid;
+		this.type = type;
 		this.pinfo = pinfo;
-		this.psimg = psimg;
-		this.pbimg = pbimg;
+		this.picture = picture;
 		this.pcost = pcost;
 		this.psnum = psnum;
 		this.prnum = prnum;
-		this.kid = kid;
+		this.kind = kind;
 		this.insertCost = insertCost;
 	}
 
@@ -75,12 +78,12 @@ public class Product {
 		this.pstate = pstate;
 	}
 
-	public int getTid() {
-		return tid;
+	public Type getType() {
+		return type;
 	}
 
-	public void setTid(int tid) {
-		this.tid = tid;
+	public void setType(Type type) {
+		this.type = type;
 	}
 
 	public String getPinfo() {
@@ -91,20 +94,12 @@ public class Product {
 		this.pinfo = pinfo;
 	}
 
-	public int getPsimg() {
-		return psimg;
+	public Picture getPicture() {
+		return picture;
 	}
 
-	public void setPsimg(int psimg) {
-		this.psimg = psimg;
-	}
-
-	public int getPbimg() {
-		return pbimg;
-	}
-
-	public void setPbimg(int pbimg) {
-		this.pbimg = pbimg;
+	public void setPicture(Picture picture) {
+		this.picture = picture;
 	}
 
 	public double getPcost() {
@@ -131,12 +126,12 @@ public class Product {
 		this.prnum = prnum;
 	}
 
-	public int getKid() {
-		return kid;
+	public Kind getKind() {
+		return kind;
 	}
 
-	public void setKid(int kid) {
-		this.kid = kid;
+	public void setKind(Kind kind) {
+		this.kind = kind;
 	}
 
 	public double getInsertCost() {
@@ -147,11 +142,17 @@ public class Product {
 		this.insertCost = insertCost;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [pid=" + pid + ", pname=" + pname + ", pstate=" + pstate + ", tid=" + tid + ", pinfo=" + pinfo
-				+ ", psimg=" + psimg + ", pbimg=" + pbimg + ", pcost=" + pcost + ", psnum=" + psnum + ", prnum=" + prnum
-				+ ", kid=" + kid + ", insertCost=" + insertCost + "]";
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", pname=" + pname + ", pstate=" + pstate + ", type=" + type + ", pinfo=" + pinfo
+				+ ", picture=" + picture + ", pcost=" + pcost + ", psnum=" + psnum + ", prnum=" + prnum + ", kind="
+				+ kind + ", insertCost=" + insertCost + "]";
+	}
+	
+
+	
 }

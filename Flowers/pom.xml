@@ -19,7 +19,6 @@
 	<modules>
 		<module>Flowers-Domain</module>
     <module>Flowers-Repository</module>
-    <module>Flowers-Service</module>
     <module>Flowers-Web</module>
       <module>Flowers-Controller</module>
   </modules>

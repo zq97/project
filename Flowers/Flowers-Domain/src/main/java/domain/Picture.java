@@ -1,6 +1,12 @@
 package domain;
 
-public class Picture {
+import java.io.Serializable;
+
+public class Picture implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int piid;
 	private String piname;
 	private String piaddress;

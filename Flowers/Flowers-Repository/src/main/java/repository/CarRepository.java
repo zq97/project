@@ -1,15 +1,18 @@
 package repository;
 
 import java.util.List;
-
 import domain.Car;
-import domain.Product;
+import domain.User;
 
 
 public interface CarRepository {
-	public void add(Car car,Product product);
-	public List<Car> findAll();
+	//添加购物车
+	public void add(Car car);
+	//查询购物车商品信息
+	public List<Car> findAll(User user);
+	//修改商品数量
 	public void update(Car car);
+	//删除购物车商品
 	public void delete(int carid);
 
 

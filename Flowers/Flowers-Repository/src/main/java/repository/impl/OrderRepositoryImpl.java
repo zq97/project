@@ -20,8 +20,7 @@ public class OrderRepositoryImpl extends BaseDao implements OrderRepository {
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					order.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDouble(4), rs.getInt(5),
-							rs.getInt(6), rs.getTimestamp(7)));
+					
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

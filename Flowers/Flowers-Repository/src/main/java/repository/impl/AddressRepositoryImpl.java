@@ -19,8 +19,7 @@ public class AddressRepositoryImpl extends BaseDao implements AddressRepository 
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					address.add(new Address(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4),
-							rs.getString(5), rs.getString(6)));
+					
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

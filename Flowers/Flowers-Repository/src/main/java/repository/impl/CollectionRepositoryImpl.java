@@ -20,7 +20,7 @@ public class CollectionRepositoryImpl extends BaseDao implements CollectionRepos
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					collection.add(new Collection(rs.getInt(1), rs.getInt(2), rs.getInt(3)));
+					
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

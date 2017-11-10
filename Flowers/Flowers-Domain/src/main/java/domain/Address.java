@@ -1,8 +1,14 @@
 package domain;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int aid;
-	private int uid; // 用户id 外键
+	private User user; // 用户, 外键
 	private String aname; // 收货人姓名
 	private String atel; // 收货人电话
 	private String aaddr; // 收货地址
@@ -10,22 +16,21 @@ public class Address {
 
 	public Address() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int uid, String aname, String atel, String aaddr, String aemail) {
+	public Address(User user, String aname, String atel, String aaddr, String aemail) {
 		super();
-		this.uid = uid;
+		this.user = user;
 		this.aname = aname;
 		this.atel = atel;
 		this.aaddr = aaddr;
 		this.aemail = aemail;
 	}
 
-	public Address(int aid, int uid, String aname, String atel, String aaddr, String aemail) {
+	public Address(int aid, User user, String aname, String atel, String aaddr, String aemail) {
 		super();
 		this.aid = aid;
-		this.uid = uid;
+		this.user = user;
 		this.aname = aname;
 		this.atel = atel;
 		this.aaddr = aaddr;
@@ -40,12 +45,12 @@ public class Address {
 		this.aid = aid;
 	}
 
-	public int getUid() {
-		return uid;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getAname() {
@@ -80,10 +85,14 @@ public class Address {
 		this.aemail = aemail;
 	}
 
-	@Override
-	public String toString() {
-		return "Address [aid=" + aid + ", uid=" + uid + ", aname=" + aname + ", atel=" + atel + ", aaddr=" + aaddr
-				+ ", aemail=" + aemail + "]";
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Address [aid=" + aid + ", user=" + user + ", aname=" + aname + ", atel=" + atel + ", aaddr=" + aaddr
+				+ ", aemail=" + aemail + "]";
+	}
+	
 }

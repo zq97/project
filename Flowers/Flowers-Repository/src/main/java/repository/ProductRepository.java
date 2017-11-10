@@ -8,9 +8,13 @@ import domain.Product;
 import domain.Type;
 
 public interface ProductRepository {
-	public void add(Product product,Type type,Kind kind,Picture picture);
+	//查询热门商品
+	public List<Product> hot();
+	//查询所有
 	public List<Product> findAll();
-	public List<Product> findBypname();
+	//模糊查询
+	public List<Product> findBypname(String pname);
+	
 	public void update(Product product);
 	public void delete(int pid);
 	

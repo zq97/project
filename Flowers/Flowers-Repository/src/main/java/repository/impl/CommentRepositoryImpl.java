@@ -20,8 +20,6 @@ public class CommentRepositoryImpl extends BaseDao implements CommentRepository 
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					comment.add(
-							new Comment(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getTimestamp(4), rs.getString(5)));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

@@ -1,11 +1,16 @@
 package domain;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Comment {
+public class Comment implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int coid;
-	private int uid; // 评论人id
-	private int pid; // 商品id
+	private User user; // 评论人,外键
+	private Product product; // 商品，外键
 	private Timestamp ctime; // 评论时间
 	private String ccontent; // 评论内容
 
@@ -14,19 +19,19 @@ public class Comment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Comment(int uid, int pid, Timestamp ctime, String ccontent) {
+	public Comment(User user, Product product, Timestamp ctime, String ccontent) {
 		super();
-		this.uid = uid;
-		this.pid = pid;
+		this.user = user;
+		this.product = product;
 		this.ctime = ctime;
 		this.ccontent = ccontent;
 	}
 
-	public Comment(int coid, int uid, int pid, Timestamp ctime, String ccontent) {
+	public Comment(int coid, User user, Product product, Timestamp ctime, String ccontent) {
 		super();
 		this.coid = coid;
-		this.uid = uid;
-		this.pid = pid;
+		this.user = user;
+		this.product = product;
 		this.ctime = ctime;
 		this.ccontent = ccontent;
 	}
@@ -39,20 +44,20 @@ public class Comment {
 		this.coid = coid;
 	}
 
-	public int getUid() {
-		return uid;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public int getPid() {
-		return pid;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public Timestamp getCtime() {
@@ -71,10 +76,14 @@ public class Comment {
 		this.ccontent = ccontent;
 	}
 
-	@Override
-	public String toString() {
-		return "Comment [coid=" + coid + ", uid=" + uid + ", pid=" + pid + ", ctime=" + ctime + ", ccontent=" + ccontent
-				+ "]";
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Comment [coid=" + coid + ", user=" + user + ", product=" + product + ", ctime=" + ctime + ", ccontent="
+				+ ccontent + "]";
+	}
+	
 }
