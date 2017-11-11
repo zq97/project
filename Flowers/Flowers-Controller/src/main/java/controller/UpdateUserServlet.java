@@ -16,7 +16,7 @@ import repository.impl.UserRepositoryImpl;
 /**
  * Servlet implementation class UpdateUserServlet
  */
-@WebServlet("/update.do")
+@WebServlet("/updateUser.do")
 public class UpdateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserRepository userRepository=new UserRepositoryImpl();
@@ -40,7 +40,7 @@ public class UpdateUserServlet extends HttpServlet {
 		user.setUbirthday(Date.valueOf(request.getParameter("ubirthday")));
 		user.setUtype(Integer.valueOf(request.getParameter("1")));
 		userRepository.update(user);
-		response.sendRedirect("");
+		response.sendRedirect("user.jsp");
 		
 	}
 

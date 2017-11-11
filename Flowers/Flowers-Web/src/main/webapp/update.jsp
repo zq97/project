@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="update.do" method="post">
+<form action="updateUser.do" method="post">
     <table>
         <tr>
             <td colspan="2"><h1>个人详细信息</h1></td>

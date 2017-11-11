@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,17 +14,17 @@ import repository.UserRepository;
 import repository.impl.UserRepositoryImpl;
 
 /**
- * Servlet implementation class TranUserServlet
+ * Servlet implementation class AddUserServlet
  */
-@WebServlet("/tranUser.do")
-public class TranUserServlet extends HttpServlet {
+@WebServlet("/addUser.do")
+public class AddUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserRepository userRepository=new UserRepositoryImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TranUserServlet() {
+    public AddUserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +33,15 @@ public class TranUserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user=userRepository.findById(Integer.valueOf(request.getParameter("uid")));
-		request.setAttribute("user",user);
-		request.getRequestDispatcher("update.jsp").forward(request, response);	}
+		User user=new User();
+		user.setUname(request.getParameter("uname"));
+		user.setUpwd(request.getParameter("upwd"));
+		user.setUsex(request.getParameter("usex"));
+		user.setUbirthday(Date.valueOf(request.getParameter("ubirthday")));
+		user.setUtype(Integer.valueOf(request.getParameter("utype")));
+		userRepository.add(user);
+		response.sendRedirect("user.jsp");
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

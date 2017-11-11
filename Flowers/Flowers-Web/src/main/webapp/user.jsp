@@ -38,7 +38,7 @@
         <a href="#" target="mainFrame">足迹</a><br>
     </div>
     <div id="right">
-        <iframe name="mainFrame" width="1050" height="1000px;" scrolling="yes" src="update.html"></iframe>
+        <iframe name="mainFrame" width="1050" height="1000px;" scrolling="yes" src="update.jsp"></iframe>
     </div>
 </div>
 

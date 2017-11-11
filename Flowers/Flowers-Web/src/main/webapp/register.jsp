@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="RegistServlet" method="post">
+<form action="addUser.do" method="post">
     <table border="0"
            style="width:420px; font-size:14px; margin-top:20px;"
            cellspacing="0" cellpadding="0">

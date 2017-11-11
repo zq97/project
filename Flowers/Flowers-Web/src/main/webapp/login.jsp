@@ -48,7 +48,7 @@
                 <li class="active"><a href="#">登录</a></li>
                 <li><a href="register.html/">注册</a></li>
             </ul>
-            <form action="index.html" id="form" method="post">
+            <form action="index.jsp" id="form" method="post">
                 <div id="add">
                     <input id="user" type="text" class="uname" placeholder="请输入用户名" >
                     <br><br>
