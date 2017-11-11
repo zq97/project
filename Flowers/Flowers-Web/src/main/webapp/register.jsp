@@ -37,8 +37,8 @@
         <tr height="50">
             <td align="right">&nbsp;性别
                 &nbsp;&nbsp;&nbsp;</td>
-            <td>男<input type="radio" value="1" name="sex"
-                        checked="checked" /> 女<input type="radio" value="2" name="sex" />
+            <td>男<input type="radio" value="1" name="usex"
+                        checked="checked" /> 女<input type="radio" value="2" name="usex" />
 
             </td>
         </tr>
@@ -56,7 +56,7 @@
 
         <tr height="60">
             <td>&nbsp;</td>
-            <td><input type="submit" value="立即注册" class="log_btn" /></td>
+            <td><input type="submit" value="立即注册" class= "log_btn" /></td>
         </tr>
     </table>
 </form>
