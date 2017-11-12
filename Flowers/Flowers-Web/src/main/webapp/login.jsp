@@ -8,13 +8,16 @@
 <link type="text/css" rel="stylesheet" href="css/login.css">
 </head>
 <body class="home">
+<div>
+            <img src="image/5.jpg" height="100" width="100%">
+        </div>
 <div class="a">
     <ul class="r" >
         <li class="a" style="margin-right: 250px">
-            <a href="#" rel="nofollow" >你好，请登录</a>
+            <a href="login.jsp" rel="nofollow" >你好，请登录</a>
             <a href="register.jsp" rel="nofollow" >注册</a>
-            <a href="#" rel="nofollow">查询订单</a>
-            <a href="#" rel="nofollow" >购物车</a>
+            <a href="order.jsp" rel="nofollow">查询订单</a>
+            <a href="car.jsp" rel="nofollow" >购物车</a>
         </li>
     </ul>
 </div>
@@ -46,7 +49,7 @@
             <!-- 登录/注册tab -->
             <ul class="login-tabs">
                 <li class="active"><a href="#">登录</a></li>
-                <li><a href="register.html/">注册</a></li>
+                <li><a href="register.jsp">注册</a></li>
             </ul>
             <form action="index.jsp" id="form" method="post">
                 <div id="add">
@@ -54,7 +57,7 @@
                     <br><br>
                     <input id="password" type="password" class="upwd" placeholder="请输入密码" ><br><br>
                     <a class="pull-right" href="#" target="_blank">忘记密码？</a>
-                    <input class="submit" type="button" onclick="validate()" value="登陆">
+                    <input type="submit" value="登陆">
                 </div>
             </form>
 

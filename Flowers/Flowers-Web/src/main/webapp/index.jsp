@@ -19,11 +19,11 @@
         <div class="d">
             <ul class="r" >
                 <li class="a" style="margin-right: 250px">
-                    <a href="#" rel="nofollow" >你好，请登录</a>
-                    <a href="#" rel="nofollow" >注册</a>
-                    <a href="#" rel="nofollow">查询订单</a>
-                    <a href="#" rel="nofollow" >购物车</a>
-                    <a href="#" rel="nofollow" >个人中心</a>
+                    <a href="login.jsp" rel="nofollow" >你好，请登录</a>
+                    <a href="register.jsp" rel="nofollow" >注册</a>
+                    <a href="order.jsp" rel="nofollow">查询订单</a>
+                    <a href="car.jsp" rel="nofollow" >购物车</a>
+                    <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
             </ul>
         </div>
@@ -78,8 +78,8 @@
                 <h4 style="color: coral">鲜花花材</h4>
                 <ul>
                     <li>
-                        <a href="#">玫瑰</a>
-                        <a href="#">康乃馨</a>
+                        <a href="product.jsp">玫瑰</a>
+                        <a href="product.jsp">康乃馨</a>
                         <a href="#">郁金香</a>
                         <a href="#">百合</a>
                     </li>
@@ -121,7 +121,11 @@
         </div>
     </div>
 </div>
-<div class="right"></div>
+<div class="right">
+<div class="hua">
+<img alt="load...." src="image/爱的祝福.jpg" width="400" hight="400">
+</div>
+</div>
 </body>
 <script>
         function mouseDown(){

@@ -20,6 +20,11 @@ public class User implements Serializable  {
 		// TODO Auto-generated constructor stub
 	}
 
+	public User(String uname) {
+		super();
+		this.uname = uname;
+	}
+
 	public User(String uname, String upwd, String usex, Date ubirthday, int utype) {
 		super();
 		this.uname = uname;

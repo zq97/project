@@ -17,11 +17,11 @@
         <div class="d">
             <ul class="r" >
                 <li class="a" style="margin-right: 250px">
-                    <a href="#" rel="nofollow" >你好，请登录</a>
-                    <a href="#" rel="nofollow" >注册</a>
-                    <a href="#" rel="nofollow">查询订单</a>
-                    <a href="#" rel="nofollow" >购物车</a>
-                    <a href="#" rel="nofollow" >个人中心</a>
+                    <a href="login.jsp" rel="nofollow" >你好，请登录</a>
+                    <a href="register.jsp" rel="nofollow" >注册</a>
+                    <a href="order.jsp" rel="nofollow">查询订单</a>
+                    <a href="car.jsp" rel="nofollow" >购物车</a>
+                    <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
             </ul>
         </div>
@@ -32,6 +32,7 @@
         <img class="image" width="500" height="500" src="image/1.jpg" alt="Loading..." />
     </div>
     <div id="b">
+    <form action="addCar.do" method="post">
     <table>
         <tr>
             <td colspan="2"><h1>阳光海岸--19枝香槟玫瑰</h1></td>
@@ -63,8 +64,9 @@
         </tr>
     </table>
     <p></p>
-    <input type="button" name="car" value="立即购买">&nbsp;&nbsp;&nbsp;
+    <input type="submit" name="car" value="立即购买">&nbsp;&nbsp;&nbsp;
     <a href="#" name="collection" rel="nofollow">收藏</a>
+    </form>
 </div>
 </div>
 </body>

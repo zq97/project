@@ -41,7 +41,6 @@
                    cellspacing="0" cellpadding="0">
                 <tr>
                     <td class="car_th" width="550">商品</td>
-                    <td class="car_th" width="140">类别</td>
                     <td class="car_th" width="150">购买数量</td>
                     <td class="car_th" width="130">小计</td>
                     <td class="car_th" width="140">返还积分</td>

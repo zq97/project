@@ -23,6 +23,26 @@ public class Product implements Serializable{
 		super();
 	}
 
+	public Product(String pname) {
+		super();
+		this.pname = pname;
+	}
+
+	public Product(int pid, String pname, int pstate, Type type, String pinfo, double pcost, int psnum, int prnum,
+			Kind kind, double insertCost) {
+		super();
+		this.pid = pid;
+		this.pname = pname;
+		this.pstate = pstate;
+		this.type = type;
+		this.pinfo = pinfo;
+		this.pcost = pcost;
+		this.psnum = psnum;
+		this.prnum = prnum;
+		this.kind = kind;
+		this.insertCost = insertCost;
+	}
+
 	public Product(String pname, int pstate, Type type, String pinfo, Picture picture, double pcost, int psnum,
 			int prnum, Kind kind, double insertCost) {
 		super();

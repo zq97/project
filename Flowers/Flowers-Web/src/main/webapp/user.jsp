@@ -17,8 +17,8 @@
         <div class="d">
             <ul class="r" >
                 <li class="a" style="margin-right: 250px">
-                    <a href="#" rel="nofollow" >你好，请登录</a>
-                    <a href="#" rel="nofollow" >注册</a>
+                    <a href="login.jsp" rel="nofollow" >你好，请登录</a>
+                    <a href="register.jsp" rel="nofollow" >注册</a>
                     <a href="#" rel="nofollow">查询订单</a>
                     <a href="#" rel="nofollow" >购物车</a>
                     <a href="#" rel="nofollow" >个人中心</a>

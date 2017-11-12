@@ -19,20 +19,20 @@
         <tr height="50">
             <td align="right">&nbsp;用户名
                 &nbsp;</td>
-            <td><input type="text" value="" class="uname"
+            <td><input type="text" id="uname"
                        name="uname" /><span class="s_ln" style="color:red"></span></td>
         </tr>
         <tr height="50">
             <td align="right">&nbsp;密码
                 &nbsp;</td>
-            <td><input type="password" value="" class="upwd"
+            <td><input type="password" id="upwd"
                        name="upwd" /> <span class="s_pwd" style="color:red"></span></td>
         </tr>
         <tr height="50">
             <td align="right">&nbsp;确认密码
                 &nbsp;</td>
-            <td><input type="password" value="" class="upwd"
-                       name="rePassword" /><span class="s_repwd" style="color:red"></span></td>
+            <td><input type="password" id="reupwd"
+                       name="reupwd" /><span class="s_repwd" style="color:red"></span></td>
         </tr>
         <tr height="50">
             <td align="right">&nbsp;性别
@@ -44,13 +44,13 @@
         </tr>
         <tr height="50">
             <td align="right">出生日期： &nbsp;</td>
-            <td><input type="date" value="" class="ubirthday"
+            <td><input type="date" id="ubirthday"
                        name="ubirthday" /> <span class="s_ic" style="color:red"></span>
             </td>
         </tr>
         <tr height="50">
             <td align="right">&nbsp;类别： &nbsp;</td>
-            <td><input type="text" value="1" class="l_num"
+            <td><input type="text" value="1" id="utype"
                        name="utype" readonly="readonly" /><span class="s_un" style="color:red"></span></td>
         </tr>
 
@@ -62,4 +62,12 @@
 </form>
 
 </body>
+<script type="text/javascript">
+ function check(){
+	 var uname=$("#uname").val();
+	 var upwd=$("#upwd").val();
+	 var reupwd=$("#reupwd").val();
+	 var reupwd=$("#ubirthday").val();
+ }
+</script>
 </html>
