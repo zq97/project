@@ -34,7 +34,7 @@
         <header>
             <i>
                 <a >
-                    <img src="image/wwey.jpg" width="750" height="120">
+                    <img src="image/wwey.jpg" width="500" height="120">
                   
                 </a>
                 <form method="post">
@@ -42,7 +42,7 @@
                     <a class="search">
                         <div>
                             <input type="text" style="width: 230px;height: 25px" placeholder="商品关键词">
-                            <input type="button"  style="height: 30px;width: 45px" value="搜索">
+                            <input type="button"  style="height: 30px;width: 45px" value="搜索" >
                         </div>
                     </a>
                 </form>
