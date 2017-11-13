@@ -51,11 +51,11 @@
                 <li class="active"><a href="#">登录</a></li>
                 <li><a href="register.jsp">注册</a></li>
             </ul>
-            <form action="index.jsp" id="form" method="post">
+            <form action="LoginServlet" id="form" method="post">
                 <div id="add">
-                    <input id="user" type="text" class="uname" placeholder="请输入用户名" >
+                    <input id="user" type="text" class="uname" name = "name" placeholder="请输入用户名" >
                     <br><br>
-                    <input id="password" type="password" class="upwd" placeholder="请输入密码" ><br><br>
+                    <input id="password" type="password" class="upwd" name = "pwd" placeholder="请输入密码" ><br><br>
                     <a class="pull-right" href="#" target="_blank">忘记密码？</a>
                     <input type="submit" value="登陆">
                 </div>

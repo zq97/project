@@ -12,5 +12,7 @@ public interface UserRepository {
 	//修改个人信息
 	public void update(User user);
 	public User findById(int uid);
+	
+	User login(User u);
 
 }

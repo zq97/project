@@ -13,7 +13,7 @@ public class BaseDao {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "123456");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

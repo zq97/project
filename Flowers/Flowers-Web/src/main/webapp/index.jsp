@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +20,9 @@
         <div class="d">
             <ul class="r" >
                 <li class="a" style="margin-right: 250px">
-                    <a href="login.jsp" rel="nofollow" >你好，请登录</a>
-                    <a href="register.jsp" rel="nofollow" >注册</a>
+                    <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
+                    <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
+                    <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
                     <a href="order.jsp" rel="nofollow">查询订单</a>
                     <a href="car.jsp" rel="nofollow" >购物车</a>
                     <a href="user.jsp" rel="nofollow" >个人中心</a>
@@ -121,13 +123,82 @@
         </div>
     </div>
 </div>
+<input class="info" type="text" style="display: none" value="${info }" />
 <div class="right">
-<div class="hua">
-<img alt="load...." src="image/爱的祝福.jpg" width="400" hight="400">
+
+<div class="divlb">
+        <div class="pic">
+            <ul class="img">
+                <li><a href=""><img src="image/爱的祝福.jpg" alt="" style="display: block" width="70%" height="500"></a><>
+                <li><a href=""><img src="image/感恩密码.jpg" alt="" width="70%" height="500"></a><>
+                <li><a href=""><img src="image/好时光.jpg" alt="" width="70%" height="500"></a><>
+                <li><a href=""><img src="image/健康长久.jpg" alt="" width="70%" height="500"></a><>
+                <li><a href=""><img src="image/幸福的约定.jpg" alt="" width="70%" height="500"></a><>
+                <li><a href=""><img src="image/邻家女孩.jpg" alt="" width="70%" height="500"></a><>
+            </ul>
+        </div>
+        <div class="Thonde" style="display: none;">
+            <ul class="numOks">
+                <li class="on">1<>
+                <li>2<>
+                <li>3<>
+                <li>4<>
+                <li>5<>
+                <li>6<>
+            </ul>
+        </div>
+    </div>
+
+    <!--轮播代码-->
+   <script type="text/javascript">
+       $(function () {
+           var index = 0;
+           $("div.Thonde ul li ").hover(function () {
+               var index = $(this).index();
+                $(this).addClass('on').siblings().removeClass();
+                $(".img li").eq(index).stop(true).fadeIn().siblings().fadeOut();
+           }, function () {
+           });
+           var i = 0;
+           var t = setInterval(move, 4000);
+
+          function move() {
+                if (index == 6)
+                    index = 0;
+                $("div.Thonde ul li ").eq(index).addClass('on').siblings().removeClass();
+               $(".img li").eq(index).stop(true).fadeIn().siblings().fadeOut();
+                index++;
+           }
+
+           $(".main").hover(function () {
+               clearInterval(t);
+           }, function () {
+                t = setInterval(move, 3000);
+           });
+           });
+    </script>
+
 </div>
+
+
 </div>
 </body>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script>
+$(function (){
+	var info = $(".info").val();
+	if(info != ""){
+		alert(info);
+	}
+	if(info =="登录成功!" && info !=""){
+		$(".dl").hide();
+		$(".hy").show();
+	}else{
+		$(".dl").show();
+		$(".hy").hide();
+	}
+})
+
         function mouseDown(){
             document.getElementById("bs").style.color="blue"
         }

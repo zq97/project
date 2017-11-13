@@ -44,6 +44,11 @@ public class User implements Serializable  {
 		this.utype = utype;
 	}
 
+	public User(String parameter, String parameter2) {
+		this.uname=parameter;
+		this.upwd= parameter2;
+	}
+
 	public int getUid() {
 		return uid;
 	}
