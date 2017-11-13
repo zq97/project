@@ -40,7 +40,7 @@ public class AddUserServlet extends HttpServlet {
 		user.setUbirthday(Date.valueOf(request.getParameter("ubirthday")));
 		user.setUtype(Integer.valueOf(request.getParameter("utype")));
 		userRepository.add(user);
-		response.sendRedirect("user.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	/**
