@@ -34,12 +34,16 @@ input {
 body {
 	background-image: url("image/登陆背景.jpg");
 }
+h1{
+color:#71fc8b}
 </style>
 <body class="home">
 
 	<form action="index.jsp" id="form" method="post">
 		<div id="add">
-			<img src="image/人头像.png" class="add-img" /><br> <input id="user"
+			<img src="image/人头像.png" class="add-img" /><br> 
+			<h1>
+			 欢迎登陆！</h1><input id="user"
 				type="text" class="user" placeholder="请输入用户名"
 				style="margin-left: 0px" maxlength="10"><br> <input
 				id="password" type="password" class="pwd" placeholder="请输入密码"
