@@ -6,13 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+body {
+	background-image: url("image/个人信息背景.jpg");
+}
+</style>
 <body>
 <div class="content">
-    <div >
-        <div>
-            <img src="image/5.jpg" height="100" width="100%">
-        </div>
-    </div>
+
     <div class="dd" align="right">
         <div class="d">
             <ul class="r" >
