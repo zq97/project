@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.Car;
+import domain.Product;
 import repository.CarRepository;
+import repository.ProductRepository;
 import repository.impl.CarRepositoryImpl;
+import repository.impl.ProductRepositoryImpl;
 
 /**
  * Servlet implementation class AddCarServlet
@@ -18,6 +21,7 @@ import repository.impl.CarRepositoryImpl;
 public class AddCarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CarRepository carRepository=new CarRepositoryImpl();
+	private ProductRepository productRepository=new ProductRepositoryImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,6 +37,12 @@ public class AddCarServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Car car=new Car();
 		car.setNum(Integer.valueOf(request.getParameter("num")));
+		Product product=new Product();
+		product.setPid(Integer.valueOf(request.getParameter("pid")));
+		car.setProduct(product);
+		carRepository.add(car); 
+
+		
 		
 	}
 

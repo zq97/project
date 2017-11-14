@@ -17,16 +17,16 @@ public class ProductRepositoryImpl extends BaseDao implements ProductRepository 
 	public List<Product> hot() {
 		List<Product> product = new ArrayList<>();
 		ResultSet rs = (ResultSet) super.execute(
-				"select p.pid,p.pname,p.pstate,t.tname,p.pinfo,p.pcost,p.psnum,p.prnum,k.kname,p.insertCost\r\n"
+				"select p.pid,p.pname,p.pstate,p.pinfo,p.pcost,p.psnum,p.prnum,p.insertCost,t.tname,k.kname\r\n"
 						+ "from product p\r\n" + "inner join type t on p.type_tid=t.tid\r\n"
 						+ "inner join kind k on p.kind_kid=k.kid where p.pid between 1 and 3\r\n");
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					Type type = new Type(rs.getString(4));
-					Kind kind = new Kind(rs.getString(9));
-					product.add(new Product(rs.getInt("1"), rs.getString(2), rs.getInt(3), type, rs.getString(5),
-							rs.getDouble(6), rs.getInt(7), rs.getInt(8), kind, rs.getDouble(10)));
+					Type type = new Type(rs.getString(9));
+					Kind kind = new Kind(rs.getString(10));
+					product.add(new Product(rs.getInt(1), rs.getString(2), rs.getInt(3),rs.getString(4),
+							rs.getDouble(5), rs.getInt(6), rs.getInt(7), rs.getDouble(8), type, kind));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -39,16 +39,16 @@ public class ProductRepositoryImpl extends BaseDao implements ProductRepository 
 	public List<Product> findAll() {
 		List<Product> product = new ArrayList<>();
 		ResultSet rs = (ResultSet) super.execute(
-				"select p.pid,p.pname,p.pstate,t.tname,p.pinfo,p.pcost,p.psnum,p.prnum,k.kname,p.insertCost\r\n"
+				"select p.pid,p.pname,p.pstate,p.pinfo,p.pcost,p.psnum,p.prnum,p.insertCost,t.tname,k.kname\r\n"
 						+ "from product p\r\n" + "inner join type t on p.type_tid=t.tid\r\n"
-						+ "inner join kind k on p.kind_kid=k.kid\r\n");
+						+ "inner join kind k on p.kind_kid=k.kid");
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					Type type = new Type(rs.getString(4));
-					Kind kind = new Kind(rs.getString(9));
-					product.add(new Product(rs.getInt("1"), rs.getString(2), rs.getInt(3), type, rs.getString(5),
-							rs.getDouble(6), rs.getInt(7), rs.getInt(8), kind, rs.getDouble(10)));
+					Type type = new Type(rs.getString(9));
+					Kind kind = new Kind(rs.getString(10));
+					product.add(new Product(rs.getInt(1), rs.getString(2), rs.getInt(3),rs.getString(4),
+							rs.getDouble(5), rs.getInt(6), rs.getInt(7), rs.getDouble(8), type, kind));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -61,17 +61,16 @@ public class ProductRepositoryImpl extends BaseDao implements ProductRepository 
 	public List<Product> findBypname(String pname) {
 		List<Product> product = new ArrayList<>();
 		ResultSet rs = (ResultSet) super.execute(
-				"select p.pid,p.pname,p.pstate,t.tname,p.pinfo,p.pcost,p.psnum,p.prnum,k.kname,p.insertCost\r\n"
+				"select p.pid,p.pname,p.pstate,p.pinfo,p.pcost,p.psnum,p.prnum,p.insertCost,t.tname,k.kname\r\n"
 						+ "from product p\r\n" + "inner join type t on p.type_tid=t.tid\r\n"
-						+ "inner join kind k on p.kind_kid=k.kid where p.pname like '%?%'\r\n",
-				pname);
+						+ "inner join kind k on p.kind_kid=k.kid where p.pname like %?%",pname);
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					Type type = new Type(rs.getString(4));
-					Kind kind = new Kind(rs.getString(9));
-					product.add(new Product(rs.getInt("1"), rs.getString(2), rs.getInt(3), type, rs.getString(5),
-							rs.getDouble(6), rs.getInt(7), rs.getInt(8), kind, rs.getDouble(10)));
+					Type type = new Type(rs.getString(9));
+					Kind kind = new Kind(rs.getString(10));
+					product.add(new Product(rs.getInt(1), rs.getString(2), rs.getInt(3),rs.getString(4),
+							rs.getDouble(5), rs.getInt(6), rs.getInt(7), rs.getDouble(8), type, kind));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -94,6 +93,12 @@ public class ProductRepositoryImpl extends BaseDao implements ProductRepository 
 	public void delete(int pid) {
 		super.execute("delete from product where pid=?", pid);
 
+	}
+  
+	@Override
+	public void updateByCar(int pid) {
+		
+		
 	}
 
 }

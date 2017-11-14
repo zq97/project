@@ -17,6 +17,8 @@ public interface ProductRepository {
 	
 	public void update(Product product);
 	public void delete(int pid);
+	//通过购物车修改商品信息
+	public void updateByCar(int pid);
 	
 
 }

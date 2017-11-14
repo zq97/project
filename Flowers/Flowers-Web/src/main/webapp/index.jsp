@@ -49,21 +49,14 @@
     </div>
     <div>
         <header>
-            <i>
-                <a >
-                    <img src="image/7.jpg" width="550" height="100">
+              <div class="img"><img src="image/7.jpg" width="450" height="80"></div>      
                   
-                </a>
                 <form method="post">
-
-                    <a class="search">
-                        <div>
+                        <div class="search">
                             <input type="text" style="width: 230px;height: 25px" placeholder="商品关键词">
                             <input type="button"  style="height: 30px;width: 45px" value="搜索">
                         </div>
-                    </a>
                 </form>
-            </i>
         </header>
     </div>
 </div>
@@ -151,7 +144,7 @@
             </div>
 </div>
 </body>
-<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script>
 $(function (){
 	var info = $(".info").val();

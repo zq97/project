@@ -34,16 +34,16 @@ public class CarRepositoryImpl extends BaseDao implements CarRepository {
 	@Override
 	public List<Car> findAll(User user) {
 		List<Car> car = new ArrayList<>();
-		ResultSet rs = (ResultSet) super.execute("select p.pname,c.num,u.uname\r\n" + 
+		ResultSet rs = (ResultSet) super.execute("select c.num,p.pname,u.uname\r\n" + 
 				"from car c\r\n" + 
 				"inner join product p on p.pid=c.product_pid\r\n" + 
 				"inner join user u on u.uid=c.user_uid");
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					Product product=new Product(rs.getString(1));
+					Product product=new Product(rs.getString(2));
 					User u=new User(rs.getString(3));
-					car.add(new Car(product,u,rs.getInt(2)));
+					car.add(new Car(rs.getInt(1),product,user));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

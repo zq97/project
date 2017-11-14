@@ -17,6 +17,11 @@
     background-color: #f2f2f2;
 
 }
-.b{
-    float: right;
+a {
+    color: #737373;
+    text-decoration: none;
+
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
 }

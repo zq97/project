@@ -5,14 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="css/login.css">
-</head>
 <style type="text/css">
 #add {
 	margin-left: 500px;
 	font-size: 30px;
 }
-
+#zhuce{
+margin-left: 500px;
+}
 input {
 	border-radius: 10px;
 	font-size: 20px; width : 350px;
@@ -32,18 +32,19 @@ input {
 }
 
 body {
-	background-image: url("image/登陆背景.jpg");
+	background-image: url("image/主页.jpg");
 }
 h1{
-color:#71fc8b}
+color:black}
 </style>
+</head>
 <body class="home">
-
+<!-- 温文尔雅 -->
 	<form action="index.jsp" id="form" method="post">
 		<div id="add">
 			<img src="image/人头像.png" class="add-img" /><br> 
 			<h1>
-			 欢迎登陆！</h1><input id="user"
+		Login to ZQ！ </h1><input id="user"
 				type="text" class="user" placeholder="请输入用户名"
 				style="margin-left: 0px" maxlength="10"><br> <input
 				id="password" type="password" class="pwd" placeholder="请输入密码"
@@ -53,8 +54,13 @@ color:#71fc8b}
 				</span>
 			</div>
 			<br> <input class="submit" type="submit" onclick="validate()"
-				value="登陆" style="margin-left: 0px; background-color: #71fc8b">
+				value="登陆" style="margin-left: 0px; background-color:silvery">
+				<br>						
 		</div>
+	</form>	
+				<form action="register.jsp" id="zhuce" method="post">
+				 <input class="submit" type="submit" onclick="validate()"
+				value="注册" style="margin-left: 0px; background-color: silvery">
 	</form>
 </body>
 </html>
