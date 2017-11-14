@@ -7,6 +7,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <link type="text/css" rel="stylesheet" href="css/index.css">
+<script>
+        window.onload = function(){
+
+            var images = document.getElementsByClassName('tu');
+            var pos = 0;
+            var len = images.length;
+
+            setInterval(function(){
+
+                images[pos].style.display = 'none';
+                pos = ++pos == len ? 0 : pos;
+                images[pos].style.display = 'inline';
+
+            },2000);
+
+        };
+    </script>
     
 </head>
 <body>
@@ -34,7 +51,7 @@
         <header>
             <i>
                 <a >
-                    <img src="image/wwey.jpg" width="500" height="120">
+                    <img src="image/7.jpg" width="550" height="100">
                   
                 </a>
                 <form method="post">
@@ -42,7 +59,7 @@
                     <a class="search">
                         <div>
                             <input type="text" style="width: 230px;height: 25px" placeholder="商品关键词">
-                            <input type="button"  style="height: 30px;width: 45px" value="搜索" >
+                            <input type="button"  style="height: 30px;width: 45px" value="搜索">
                         </div>
                     </a>
                 </form>
@@ -54,7 +71,7 @@
 <div class="left">
     <div class="n">
         <div>
-            <h3 align="center">全部商品导购</h3>
+            <h2 align="center">全部商品导购</h2>
         </div>
         <div>
             <h4 style="color: coral">鲜花用途</h4>
@@ -126,62 +143,12 @@
 </div>
 <input class="info" type="text" style="display: none" value="${info }" />
 <div class="right">
+	 <div style=" overflow:hidden; width:950px; height:450px; position:relative; float:left;">
+                <a href="#"><img src="tu/1.jpg" width="950" height="450" class="tu"/></a>
+                <a  href="#"><img src="tu/5.jpg" width="950" height="450" class="tu"/></a>
+                <a  href="#"><img src="tu/3.jpg" width="950" height="450" class="tu" style="display: none"/></a>
 
-<div class="divlb">
-        <div class="pic">
-            <ul class="img">
-                <li><a href=""><img src="image/爱的祝福.jpg" alt="" style="display: block" width="70%" height="500"></a><>
-                <li><a href=""><img src="image/感恩密码.jpg" alt="" width="70%" height="500"></a><>
-                <li><a href=""><img src="image/好时光.jpg" alt="" width="70%" height="500"></a><>
-                <li><a href=""><img src="image/健康长久.jpg" alt="" width="70%" height="500"></a><>
-                <li><a href=""><img src="image/幸福的约定.jpg" alt="" width="70%" height="500"></a><>
-                <li><a href=""><img src="image/邻家女孩.jpg" alt="" width="70%" height="500"></a><>
-            </ul>
-        </div>
-        <div class="Thonde" style="display: none;">
-            <ul class="numOks">
-                <li class="on">1<>
-                <li>2<>
-                <li>3<>
-                <li>4<>
-                <li>5<>
-                <li>6<>
-            </ul>
-        </div>
-    </div>
-
-    <!--轮播代码-->
-   <script type="text/javascript">
-       $(function () {
-           var index = 0;
-           $("div.Thonde ul li ").hover(function () {
-               var index = $(this).index();
-                $(this).addClass('on').siblings().removeClass();
-                $(".img li").eq(index).stop(true).fadeIn().siblings().fadeOut();
-           }, function () {
-           });
-           var i = 0;
-           var t = setInterval(move, 4000);
-
-          function move() {
-                if (index == 6)
-                    index = 0;
-                $("div.Thonde ul li ").eq(index).addClass('on').siblings().removeClass();
-               $(".img li").eq(index).stop(true).fadeIn().siblings().fadeOut();
-                index++;
-           }
-
-           $(".main").hover(function () {
-               clearInterval(t);
-           }, function () {
-                t = setInterval(move, 3000);
-           });
-           });
-    </script>
-
-</div>
-
-
+            </div>
 </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
