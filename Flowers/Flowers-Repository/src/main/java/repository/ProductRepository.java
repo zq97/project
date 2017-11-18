@@ -12,6 +12,7 @@ public interface ProductRepository {
 	public List<Product> hot();
 	//查询所有
 	public List<Product> findAll();
+	public List<Product> find();
 	//模糊查询
 	public List<Product> findBypname(String pname);
 	

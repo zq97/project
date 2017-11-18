@@ -40,7 +40,7 @@
                     <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
                     <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
                     <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
-                    <a href="order.do" rel="nofollow" name="order.do?select=a">查询订单</a>
+                    <a href="order.do?select=find" rel="nofollow" name="find">查询订单</a>
                     <a href="selectCar.do" rel="nofollow" >查看购物车</a>
                     <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
@@ -91,7 +91,7 @@
                 <h4 style="color: coral">鲜花花材</h4>
                 <ul>
                     <li>
-                        <a href="showAllProduct.do">玫瑰</a>
+                        <a href="showAllProduct.do?type=a" name="showAllProduct">玫瑰</a>
                         <a href="product.jsp">康乃馨</a>
                         <a href="#">郁金香</a>
                         <a href="#">百合</a>

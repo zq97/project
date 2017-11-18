@@ -6,9 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <body>
 
-<img src="image/玫瑰/玫瑰1.jpg" style="height: 300px; width: 300px;" alt="浪漫缤纷">
+<!-- <img src="image/玫瑰/玫瑰1.jpg" style="height: 300px; width: 300px;" alt="浪漫缤纷">
 
 <h2>浪漫缤纷</h2>
 <div>
@@ -25,6 +26,26 @@
 <dd>54</dd>
 </dl>
 <div>价格:<strong>￥400</strong></div>
+</div>
+<a href="order.do">立即购买</a>
+<a href="#">加入收藏</a> -->
+
+<img src="image/玫瑰/${list.picture.piname }">
+<h2>浪漫缤纷</h2>
+<div>
+<dl>
+<dt>商品类别:</dt>
+<dd>${list.type.tname }</dd>
+</dl>
+<dl>
+<dt>商品描述:</dt>
+<dd>${list.pinfo }</dd>
+</dl>
+<dl>
+<dt>商品销量:</dt>
+<dd>${list.psnum }</dd>
+</dl>
+<div>价格:<strong>￥${list.pcost }</strong></div>
 </div>
 <a href="order.do">立即购买</a>
 <a href="#">加入收藏</a>
