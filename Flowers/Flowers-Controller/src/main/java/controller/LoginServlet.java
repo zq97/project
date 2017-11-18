@@ -38,9 +38,6 @@ public class LoginServlet extends HttpServlet {
 		if(u != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", u);
-			request.setAttribute("info", "登录成功!");
-		}else {
-			request.setAttribute("info", "登录失败!");
 		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

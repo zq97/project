@@ -36,7 +36,6 @@ public class OrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String parameter = request.getParameter("select");
-		System.out.println("参数:"+parameter);
 		switch (parameter) {
 		case "find":
 			find(request, response);

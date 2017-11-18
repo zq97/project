@@ -38,20 +38,21 @@ public class ShowAllProductServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String parameter = request.getParameter("type");
 		switch (parameter) {
-		case "a":
+		case "all":
 			findAll(request, response);
 			break;
-		case "b":
+		case "mei":
 			find(request, response);
 			break;
 		default:
 			break;
 		}
 	}
-
+   
 	private void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Product> list = productRepository.find();
-		request.setAttribute("list", list);
+		 Product find = productRepository.find();
+		System.out.println(find);
+		 request.setAttribute("list",find);
 		request.getRequestDispatcher("product1.jsp").forward(request, response);
 
 	}

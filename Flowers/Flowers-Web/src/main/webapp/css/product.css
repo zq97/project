@@ -23,12 +23,34 @@ a {
     padding: 9px 24px;
 }
 
-.b {
-    float: right;
-    width: 600px;
+/* .b {
+	float: right;
+    width: 800px;
     margin-top: -60px;
     margin-right:-100px;
     
+} */
+.img{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.search {
+    float: right;
+    width: 600px;
+    margin-top: -65px;
+    margin-right: 0px;
+}
+#bb{
+	width: 60%;
+	height: 600px;
+	margin-left:240px;
+	
+}
+#bbb{
+	width: 30%;
+	height: 300px;
+	border: solid;
+	
 }
 .a{
     height: 60px;

@@ -40,8 +40,8 @@
                     <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
                     <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
                     <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
-                    <a href="order.do?select=find" rel="nofollow" name="find">查询订单</a>
-                    <a href="selectCar.do" rel="nofollow" >查看购物车</a>
+                    <a href="order.do?select=find" rel="nofollow" name="find" onclick="return check()">查询订单</a>
+                    <a href="selectCar.do" rel="nofollow" onclick="return check()" >查看购物车</a>
                     <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
             </ul>
@@ -91,7 +91,7 @@
                 <h4 style="color: coral">鲜花花材</h4>
                 <ul>
                     <li>
-                        <a href="showAllProduct.do?type=a" name="showAllProduct">玫瑰</a>
+                        <a href="showAllProduct.do?type=all" name="showAllProduct">玫瑰</a>
                         <a href="product.jsp">康乃馨</a>
                         <a href="#">郁金香</a>
                         <a href="#">百合</a>
@@ -134,7 +134,8 @@
         </div>
     </div>
 </div>
-<input class="info" type="text" style="display: none" value="${info }" />
+<input class="info" type="text" style="display: none" value="${user.uname }" />
+
 <div class="right">
 	 <div style=" overflow:hidden; width:950px; height:450px; position:relative; float:left;">
                 <a href="#"><img src="tu/1.jpg" width="850" height="450" class="tu"/></a>
@@ -146,12 +147,17 @@
 </body>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script>
+function  check(){
+	var info = $(".info").val();
+	if(info == ""){
+		alert("用户未登录！！！！！！！！");
+		return false;
+	}
+	return true;
+};
 $(function (){
 	var info = $(".info").val();
-	if(info != ""){
-		alert(info);
-	}
-	if(info =="登录成功!" && info !=""){
+	if(info !=""){
 		$(".dl").hide();
 		$(".hy").show();
 	}else{

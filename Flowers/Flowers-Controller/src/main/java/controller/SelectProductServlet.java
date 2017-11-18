@@ -38,7 +38,7 @@ public class SelectProductServlet extends HttpServlet {
 		request.setAttribute("list", findBypname);
 		switch (name) {
 		case "玫瑰":
-			request.getRequestDispatcher("product.jsp").forward(request, response);
+			request.getRequestDispatcher("showAllProduct.do?type=all").forward(request, response);
 			break;
 		case "百合":
 			request.getRequestDispatcher("car.jsp").forward(request, response);
