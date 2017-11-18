@@ -19,7 +19,7 @@ public class AddressRepositoryImpl extends BaseDao implements AddressRepository 
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					
+					address.add(new Address(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -31,19 +31,20 @@ public class AddressRepositoryImpl extends BaseDao implements AddressRepository 
 
 	@Override
 	public void update(Address address) {
-		// TODO Auto-generated method stub
+		super.execute("update address set aname=?,atel=?,aaddr=?,aemail=?"
+				,address.getAname(),address.getAtel(),address.getAaddr(),address.getAemail());
 
 	}
 
 	@Override
 	public void delete(int aid) {
-		// TODO Auto-generated method stub
+		super.execute("delete from address where aid=?",aid);
 
 	}
 
 	@Override
-	public void add(Address address, User user) {
-		// TODO Auto-generated method stub
+	public void add(Address address) {
+		super.execute("insert into address(aname,atel,aaddr,aemail) values(?,?,?,?)",address.getAname(),address.getAtel(),address.getAaddr(),address.getAemail());
 
 	}
 

@@ -20,6 +20,16 @@ public class Order implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Order(int oid, int onum, double ototal, int ostate, Timestamp otime, Address address, Product product) {
+		super();
+		this.oid = oid;
+		this.onum = onum;
+		this.ototal = ototal;
+		this.ostate = ostate;
+		this.otime = otime;
+		this.address = address;
+		this.product = product;
+	}
 	public Order(int onum, double ototal, int ostate, Timestamp otime, User user, Address address, Product product) {
 		super();
 		this.onum = onum;

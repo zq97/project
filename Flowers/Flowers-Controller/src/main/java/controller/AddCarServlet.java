@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import domain.Car;
 import domain.Product;
+import domain.User;
 import repository.CarRepository;
 import repository.ProductRepository;
 import repository.impl.CarRepositoryImpl;
@@ -35,12 +36,17 @@ public class AddCarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Car car=new Car();
-		car.setNum(Integer.valueOf(request.getParameter("num")));
+		
 		Product product=new Product();
 		product.setPid(Integer.valueOf(request.getParameter("pid")));
+		User user=new User();
+		user.setUid(Integer.valueOf(request.getParameter("uid")));
+		Car car=new Car();
+		car.setNum(Integer.valueOf(1));
 		car.setProduct(product);
+		car.setUser(user);
 		carRepository.add(car); 
+		request.getRequestDispatcher("product.jsp").forward(request, response);
 
 		
 		

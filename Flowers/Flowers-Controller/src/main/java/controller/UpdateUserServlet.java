@@ -41,7 +41,6 @@ public class UpdateUserServlet extends HttpServlet {
 		user.setUtype(Integer.valueOf(request.getParameter("1")));
 		userRepository.update(user);
 		response.sendRedirect("user.jsp");
-		
 	}
 
 	/**

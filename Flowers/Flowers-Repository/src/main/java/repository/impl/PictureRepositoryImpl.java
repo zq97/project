@@ -13,8 +13,7 @@ public class PictureRepositoryImpl extends BaseDao implements PictureRepository 
 
 	@Override
 	public void add(Picture picture) {
-		super.execute("INSERT INTO picture(piname,piaddress) values (?,?)", picture.getPiname(),
-				picture.getPiaddress());
+		super.execute("INSERT INTO picture(piname) values (?)", picture.getPiname());
 
 	}
 
@@ -25,7 +24,7 @@ public class PictureRepositoryImpl extends BaseDao implements PictureRepository 
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					picture.add(new Picture(rs.getInt(1), rs.getString(2), rs.getString(3)));
+					picture.add(new Picture(rs.getInt(1), rs.getString(2)));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

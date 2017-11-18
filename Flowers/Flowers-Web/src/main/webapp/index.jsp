@@ -40,8 +40,8 @@
                     <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
                     <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
                     <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
-                    <a href="order.jsp" rel="nofollow">查询订单</a>
-                    <a href="car.jsp" rel="nofollow" >购物车</a>
+                    <a href="order.do" rel="nofollow" name="order.do?select=a">查询订单</a>
+                    <a href="selectCar.do" rel="nofollow" >查看购物车</a>
                     <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
             </ul>
@@ -51,10 +51,10 @@
         <header>
               <div class="img"><img src="image/7.jpg" width="450" height="80"></div>      
                   
-                <form method="post">
+                <form method="post" action="selectProduct.do">
                         <div class="search">
-                            <input type="text" style="width: 230px;height: 25px" placeholder="商品关键词">
-                            <input type="button"  style="height: 30px;width: 45px" value="搜索">
+                            <input type="text" name="name" style="width: 230px;height: 25px" placeholder="商品关键词">
+                            <input type="submit"  style="height: 30px;width: 45px" value="搜索">
                         </div>
                 </form>
         </header>
@@ -91,7 +91,7 @@
                 <h4 style="color: coral">鲜花花材</h4>
                 <ul>
                     <li>
-                        <a href="product.jsp">玫瑰</a>
+                        <a href="showAllProduct.do">玫瑰</a>
                         <a href="product.jsp">康乃馨</a>
                         <a href="#">郁金香</a>
                         <a href="#">百合</a>
@@ -137,9 +137,9 @@
 <input class="info" type="text" style="display: none" value="${info }" />
 <div class="right">
 	 <div style=" overflow:hidden; width:950px; height:450px; position:relative; float:left;">
-                <a href="#"><img src="tu/1.jpg" width="950" height="450" class="tu"/></a>
-                <a  href="#"><img src="tu/5.jpg" width="950" height="450" class="tu"/></a>
-                <a  href="#"><img src="tu/3.jpg" width="950" height="450" class="tu" style="display: none"/></a>
+                <a href="#"><img src="tu/1.jpg" width="850" height="450" class="tu"/></a>
+                <a  href="#"><img src="tu/5.jpg" width="850" height="450" class="tu"/></a>
+                <a  href="#"><img src="tu/6.jpg" width="850" height="450" class="tu" style="display: none"/></a>
 
             </div>
 </div>

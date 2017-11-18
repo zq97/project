@@ -23,6 +23,19 @@ public class Product implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Product(String pname, double pcost, Picture picture) {
+		super();
+		this.pname = pname;
+		this.pcost = pcost;
+		this.picture = picture;
+	}
+
+	public Product(String pname, double pcost) {
+		super();
+		this.pname = pname;
+		this.pcost = pcost;
+	}
+
 	public Product(String pname) {
 		super();
 		this.pname = pname;

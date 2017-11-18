@@ -9,8 +9,9 @@ import domain.User;
 
 
 public interface OrderRepository {
-	public void add(Order order,User user,Address address);
+	public void add(Order order);
 	public List<Order> findAll();
-	public void delete(int kid);
+	public void delete(int oid);
+	 List<Order> findById(int oid);
 
 }

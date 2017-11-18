@@ -56,13 +56,13 @@ form {
     display: block;
     margin-top: 0em;
 }
-body {
+/* body {
     font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
     font-size: 14px;
     line-height: 1.2;
     color: #737373;
     background-color: #ffffff;
-}
+} */
 .r{
     float: right;
 }
@@ -101,7 +101,7 @@ body {
 }
 
 .n{
-    margin-left: 110px;
+    margin-left: 80px;
 }
 .r{
     border-bottom: 1px solid #e9e9e9;

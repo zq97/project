@@ -6,15 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<style type="text/css" >
-        .leftNav{
-            display: none;
-        }
-    </style>
 </head>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <body>
-<div class="i_bg">
-    <div class="content mar_20">
+<div class="total">
+    <div class="a">
         <img src="image/5.jpg" />
     </div>
 
@@ -22,90 +18,45 @@
         <div class="d">
             <ul class="r" >
                 <li class="a" style="margin-right: 250px">
-                    <a href="#" rel="nofollow" >你好，请登录</a>
-                    <a href="#" rel="nofollow" >注册</a>
+                    <a href="login.jsp" rel="nofollow" >你好，请登录</a>
+                    <a href="register.jsp" rel="nofollow" >注册</a>
                     <a href="#" rel="nofollow">查询订单</a>
-                    <a href="#" rel="nofollow" >购物车</a>
-                    <a href="#" rel="nofollow" >个人中心</a>
+                    <a href="car.jsp" rel="nofollow" >购物车</a>
+                    <a href="user.jsp" rel="nofollow" >个人中心</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="content mar_20">
-        <div class="two_bg">
-            <div class="two_t">
-                <span class="fr"><h2>购物车详细信息</h2></span>
+        <div class="b">
+            <div class="bb">
+                <h2>购物车详细信息</h2>
             </div>
-            <table border="1" class="car_tab" style="width:1110px;"
-                   cellspacing="0" cellpadding="0">
+            <table border="1">
                 <tr>
-                    <td class="car_th" width="550">商品</td>
-                    <td class="car_th" width="150">购买数量</td>
-                    <td class="car_th" width="130">小计</td>
-                    <td class="car_th" width="140">返还积分</td>
+                    <td>商品</td>
+                    <td>购买数量</td>
+                    <td >价格</td> 
+                    <td>操作</td>              
                 </tr>
-                <c:forEach items="${car }" var="c" varStatus="status">
+                <c:forEach items="${car}" var="c">
                     <tr>
                     <td height="90" width="100">
-                        <div class="c_s_img">
-                            <img src="image/1.jpg" width="73" height="73" />
-                        </div>${c.pname}
-                    </td>
-
-                    <td align="center">
-                        ${c.type}
-                    </td>
-                    <td align="center" style="color:#ff4e00;">￥${c.pnum}</td>
-                    <td align="center">26R</td>
+                        <div class="img">
+                            <img src="image/玫瑰/${c.product.picture.piname }" width="73" height="73" />
+                        </div>${c.product.pname}
+                    </td> 
+                    <td align="center">${c.num}</td>
+                    <td style="color:#ff4e00;">￥${c.product.pcost }</td>
                     <td align="center"><a  href="#">删除</a>&nbsp;
-                        &nbsp;<a href="#">加入收藏</a></td>
+                        &nbsp;<a href="#">立即购买</a></td>
                     </tr>
                 </c:forEach>
 
             </table>
 
-            <div class="two_t">
-                <h2>收货人信息</h2>
-                <span class="fr"><a href="#">修改</a></span>
-            </div>
-            <table border="2" class="peo_tab" style="width:1110px;"
-                   cellspacing="0" cellpadding="0">
-                <tr>
-                    <td class="p_td" width="160">商品名称</td>
-                    <td width="395">$</td>
-                    <td class="p_td" width="160">电子邮件</td>
-                    <td width="395">$</td>
-                </tr>
-                <tr>
-                    <td class="p_td">详细信息</td>
-                    <td>四川省成都市武侯区</td>
-                    <td class="p_td">邮政编码</td>
-                    <td>6011111</td>
-                </tr>
-                <tr>
-                    <td class="p_td">电话</td>
-                    <td></td>
-                    <td class="p_td">手机</td>
-                    <td>18600002222</td>
-                </tr>
-
-            </table>
-            <table border="0" style="width:900px; margin-top:20px;"
-                   cellspacing="0" cellpadding="0">
-
-                <tr height="70">
-                    <td align="right"><b style="font-size:14px;">应付款金额：<span
-                            style="font-size:22px; color:#ff4e00;">${total }</span></b></td>
-                </tr>
-                <tr height="70">
-                    <td align="right"><a href="BuyCar_Three.jsp"><img
-                            src="images/btn_sure.gif" /></a></td>
-                </tr>
-            </table>
-
         </div>
-    </div>
+   
 
 </div>
 

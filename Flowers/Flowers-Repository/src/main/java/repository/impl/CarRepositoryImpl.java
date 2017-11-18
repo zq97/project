@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import domain.Car;
+import domain.Picture;
 import domain.Product;
-import domain.User;
 import repository.BaseDao;
 import repository.CarRepository;
 
-public class CarRepositoryImpl extends BaseDao implements CarRepository {
+
+
+public class CarRepositoryImpl extends BaseDao implements CarRepository{
 
 	@Override
 	public void update(Car car) {
@@ -27,26 +29,25 @@ public class CarRepositoryImpl extends BaseDao implements CarRepository {
 
 	@Override
 	public void add(Car car) {
-		super.execute("insert into car(num,product_pid,user_uid) values(?,?,?)",car.getNum(),car.getProduct().getPid(),car.getUser().getUid());
-		
+		super.execute("insert into car(num,product_pid,user_uid) values(?,?,?)", car.getNum(),
+				car.getProduct().getPid(), car.getUser().getUid());
+
 	}
 
 	@Override
-	public List<Car> findAll(User user) {
+	public List<Car> findAll() {
 		List<Car> car = new ArrayList<>();
-		ResultSet rs = (ResultSet) super.execute("select c.num,p.pname,u.uname\r\n" + 
-				"from car c\r\n" + 
-				"inner join product p on p.pid=c.product_pid\r\n" + 
-				"inner join user u on u.uid=c.user_uid");
-		if (rs != null) {
-			try {
+		ResultSet rs = (ResultSet) super.execute("select c.num,p.pname,p.pcost,pi.piname\r\n" + 
+				"from car c,product p,picture pi\r\n" + 
+				"where c.product_pid=p.pid and p.picture_piid=pi.piid");
+		if (rs != null) { 
+			try {// select * from product p, car c where p.id = c.id and
 				while (rs.next()) {
-					Product product=new Product(rs.getString(2));
-					User u=new User(rs.getString(3));
-					car.add(new Car(rs.getInt(1),product,user));
+					Picture picture=new Picture(rs.getString(4));
+					Product product = new Product(rs.getString(2),rs.getDouble(3),picture);
+					car.add(new Car(rs.getInt(1), product));
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
