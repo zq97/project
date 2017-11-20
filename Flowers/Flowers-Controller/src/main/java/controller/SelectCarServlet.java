@@ -41,6 +41,7 @@ public class SelectCarServlet extends HttpServlet {
 //		request.getRequestDispatcher("car.jsp").forward(request, response);
 		List<Car> findAll = carRepository.findAll();
 		request.setAttribute("car", findAll);
+		System.out.println(findAll);
 		request.getRequestDispatcher("car.jsp").forward(request, response);
 	}
 

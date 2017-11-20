@@ -63,7 +63,7 @@ a {
                 </li>
             </ul>
         </div>
-        <div class="img"><img src="image/7.jpg" width="450" height="80"></div>      
+        <div class="img"><img src="image/主页标题.png" width="550" height="100"></div></div>      
                   
                 <form method="post" action="selectProduct.do">
                         <div class="search">
@@ -87,9 +87,9 @@ a {
 <dt>商品销量:</dt>
 <dd>${list.psnum }</dd>
 </dl>
-<div  style="color: red;font-size: 23px">价格:<strong>￥${list.pcost }</strong></div>
+<div  style="color: red;font-size: 23px" name="pcost">价格:<strong>￥${list.pcost }</strong></div>
 </div><br><br><br>
-<a href="order.do" style="color: red;font-size: 30px">立即购买</a>
+<a href="order.do?type=add" style="color: red;font-size: 30px">立即购买</a>
 <a href="#"  style="color: red;font-size: 30px">加入收藏</a>
 </div>
 </body>

@@ -36,17 +36,20 @@ public class AddCarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("addcar.............................");
 		Product product=new Product();
+		System.out.println(request.getParameter("pid"));
+//		product.getPid(Integer.valueOf(request.getParameter("pid")));
 		product.setPid(Integer.valueOf(request.getParameter("pid")));
-		User user=new User();
-		user.setUid(Integer.valueOf(request.getParameter("uid")));
+//		User user=new User();
+//		user.setUid(Integer.valueOf(request.getParameter("uid")));
 		Car car=new Car();
 		car.setNum(Integer.valueOf(1));
 		car.setProduct(product);
-		car.setUser(user);
+//		car.setUser(user);
+		System.out.println(car);
 		carRepository.add(car); 
-		request.getRequestDispatcher("product.jsp").forward(request, response);
+		response.sendRedirect("product.jsp");
 
 		
 		

@@ -7,22 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import domain.User;
-import repository.UserRepository;
-import repository.impl.UserRepositoryImpl;
+import repository.CarRepository;
+import repository.impl.CarRepositoryImpl;
 
 /**
- * Servlet implementation class TranUserServlet
+ * Servlet implementation class deleteCarServlet
  */
-@WebServlet("/tranUser.do")
-public class TranUserServlet extends HttpServlet {
+@WebServlet("/deleteCar.do")
+public class DeleteCarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UserRepository userRepository=new UserRepositoryImpl();
+	CarRepository carRepository=new CarRepositoryImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TranUserServlet() {
+    public DeleteCarServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +30,9 @@ public class TranUserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user=userRepository.findByUname(request.getParameter("uname"));
-		request.setAttribute("user",user);
-		request.getRequestDispatcher("user.jsp").forward(request, response);	}
+		carRepository.delete(Integer.valueOf(request.getParameter("id")));
+		response.sendRedirect("selectCar.do");
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

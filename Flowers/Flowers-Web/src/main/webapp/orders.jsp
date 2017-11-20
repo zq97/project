@@ -11,6 +11,9 @@
 <body>
 <div>
 <table border="1">
+<tr >
+<td colspan="5" align="center"><h2>订单信息</h2></td>
+</tr>
 <tr>
 <td>订单号</td>
 <td>商品名</td>
@@ -31,8 +34,11 @@
 </c:forEach>
 </table>
 </div>
-<h2>详细地址信息</h2>
+<br><br><br>
 <table border="1">
+<tr >
+<td colspan="4" align="center"><h2>详细地址信息</h2></td>
+</tr>
 <tr>
 <td>收货人姓名</td>
 <td>收货人电话</td>

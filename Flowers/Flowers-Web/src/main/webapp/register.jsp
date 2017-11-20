@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%-- <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
@@ -79,5 +79,101 @@ body {
 		var reupwd = $("#reupwd").val();
 		var reupwd = $("#ubirthday").val();
 	}
+</script>
+</html> --%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+#zhuce {
+	margin-left: 420px;
+}
+#ljzc{	
+margin-left: 550px;
+height: 50px;
+	width: 212px;
+}
+h1 {
+	margin-left: 600px;
+	color: black
+}
+
+input {
+	border-radius: 10px;
+	font-size: 20px;
+	height: 50px;
+}
+
+body {
+	background-image: url("image/注册背景.jpg");
+}
+</style>
+</head>
+<body>
+	<form action="addUser.do" method="post">
+		<table id="zhuce">
+
+			<h1>Register</h1>
+
+			<tr>
+				<td align="right">&nbsp;用户名： &nbsp;</td>
+				<td><input type="text" id="uname" name="uname" /><span
+					class="s_ln" style="color: red"></span></td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;密码： &nbsp;</td>
+				<td><input type="password" id="upwd" name="upwd" /> <span
+					class="s_pwd" style="color: red"></span></td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;确认密码： &nbsp;</td>
+				<td><input type="password" id="reupwd" name="reupwd" /><span
+					class="s_repwd" style="color: red"></span></td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;</td>
+				<td>男<input type="radio" value="1" name="usex"
+					checked="checked" /> 女<input type="radio" value="2" name="usex" />
+				</td>
+			</tr>
+			<tr>
+				<td align="right">出生日期： &nbsp;</td>
+				<td><input type="date" id="ubirthday" name="ubirthday" /> <span
+					class="s_ic" style="color: red"></span></td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;类别： &nbsp;</td>
+				<td><input type="text" value="1" id="utype" name="utype"
+					readonly="readonly" /><span class="s_un" style="color: red"></span></td>
+			</tr>		
+		</table>
+		<input id="ljzc" type="submit" value="立即注册" class= "log_btn"   style="background-color:pink"/>
+	</form>
+
+</body>
+<script type="text/javascript">
+	function check() {
+		var uname = $("#uname").val();
+		var upwd = $("#upwd").val();
+		var reupwd = $("#reupwd").val();
+		var reupwd = $("#ubirthday").val();
+	}
+	function check(){
+		   var password = document.getElementById("upwd").value;
+		   var repsword = document.getElementById("reupwd").value;
+		   if(upwd === ''){
+		      alert('密码不能为空');
+		      return false;
+		   }
+		   if(upwd != reupwd) {
+		      alert("两次密码不同，请重新输入");
+		      return false;
+		   }
+		    
+		}
 </script>
 </html>

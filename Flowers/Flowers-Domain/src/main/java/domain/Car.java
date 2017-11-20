@@ -17,8 +17,6 @@ public class Car implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
 	public Car(int num, Product product) {
 		super();
 		this.num = num;
@@ -26,6 +24,13 @@ public class Car implements Serializable{
 	}
 
 
+
+	public Car(int carid, int num, Product product) {
+		super();
+		this.carid = carid;
+		this.num = num;
+		this.product = product;
+	}
 
 	public Car(int carid, int num, Product product, User user) {
 		super();

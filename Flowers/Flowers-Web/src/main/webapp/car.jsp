@@ -48,18 +48,16 @@
                     </td> 
                     <td align="center">${c.num}</td>
                     <td style="color:#ff4e00;">￥${c.product.pcost }</td>
-                    <td align="center"><a  href="#">删除</a>&nbsp;
-                        &nbsp;<a href="#">立即购买</a></td>
+                    <td align="center"><a href="deleteCar.do?id=${c.carid }")">删除</a>&nbsp;
+                        &nbsp;<a href="order.do?type=add">立即购买</a></td>
                     </tr>
+                    
                 </c:forEach>
 
             </table>
 
         </div>
-   
-
 </div>
-
 </body>
-
+ 
 </html>

@@ -28,11 +28,10 @@
 </head>
 <body>
 <div id="top">
-    <div >
         <div>
-            <img src="image/5.jpg" height="100" width="100%">
+            <!-- <img src="image/5.jpg" height="100" width="100%"> -->
+            <img src="image/主页顶端.jpg" width="100%" height="100">
         </div>
-    </div>
     <div class="dd" align="right">
         <div class="d">
             <ul class="r" >
@@ -40,16 +39,20 @@
                     <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
                     <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
                     <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
-                    <a href="order.do?select=find" rel="nofollow" name="find" onclick="return check()">查询订单</a>
+                    <a href="order.do?type=find" rel="nofollow" onclick="return check()">查询订单</a>
                     <a href="selectCar.do" rel="nofollow" onclick="return check()" >查看购物车</a>
-                    <a href="user.jsp" rel="nofollow" >个人中心</a>
+                    <a href="user.jsp" rel="nofollow" onclick="return check()">个人中心</a>
+                    <a href="exit.jsp" rel="nofollow" class="exit" style="display: none"  >退出登录</a>
                 </li>
             </ul>
         </div>
     </div>
     <div>
         <header>
-              <div class="img"><img src="image/7.jpg" width="450" height="80"></div>      
+              <div class="img">
+              <!-- <img src="image/7.jpg" width="450" height="80"> -->
+              <img src="image/主页标题.png" width="550" height="100">
+              </div>      
                   
                 <form method="post" action="selectProduct.do">
                         <div class="search">
@@ -134,7 +137,7 @@
         </div>
     </div>
 </div>
-<input class="info" type="text" style="display: none" value="${user.uname }" />
+<input class="info" type="text" name="uname" style="display: none" value="${user.uname }" />
 
 <div class="right">
 	 <div style=" overflow:hidden; width:950px; height:450px; position:relative; float:left;">
@@ -160,6 +163,7 @@ $(function (){
 	if(info !=""){
 		$(".dl").hide();
 		$(".hy").show();
+		$(".exit").show();
 	}else{
 		$(".dl").show();
 		$(".hy").hide();

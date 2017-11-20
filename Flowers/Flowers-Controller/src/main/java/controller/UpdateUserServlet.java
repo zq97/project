@@ -36,7 +36,6 @@ public class UpdateUserServlet extends HttpServlet {
 		User user=new User();
 		user.setUname(request.getParameter("uname"));
 		user.setUpwd(request.getParameter("upwd"));
-		user.setUsex(request.getParameter("usex"));
 		user.setUbirthday(Date.valueOf(request.getParameter("ubirthday")));
 		user.setUtype(Integer.valueOf(request.getParameter("1")));
 		userRepository.update(user);

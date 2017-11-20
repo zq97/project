@@ -11,7 +11,7 @@ public interface UserRepository {
 	public List<User> findUser();
 	//修改个人信息
 	public void update(User user);
-	public User findById(int uid);
+	public User findByUname(String uname);
 	
 	User login(User u);
 

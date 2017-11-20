@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import domain.Address;
 import domain.Order;
 import repository.OrderRepository;
 import repository.impl.OrderRepositoryImpl;
@@ -35,14 +37,29 @@ public class OrderServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String parameter = request.getParameter("select");
+		String parameter = request.getParameter("type");
 		switch (parameter) {
 		case "find":
 			find(request, response);
 			break;
+		case "add":
+			add(request, response);
+			break;
 		default:
 			break;
 		}
+	}
+
+	private void add(HttpServletRequest request, HttpServletResponse response) {
+		
+		int num=(int) ((Math.random()*9+1)*100000);
+		String s=String.valueOf(System.currentTimeMillis());
+		Order order=new Order();
+		order.setOnum(num);
+		order.setOtotal(Double.valueOf(request.getParameter("pcost")));
+		order.setOstate(1);
+		order.setOtime(Timestamp.valueOf(s));
+		
 	}
 
 	private void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

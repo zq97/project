@@ -12,9 +12,11 @@
 <body>
 	<div class="top">
 		<div>
-			<img src="image/5.jpg" height="100" width="100%">
+			<!-- <img src="image/5.jpg" height="100" width="100%"> -->
+			<img src="image/主页顶端.jpg" width="100%" height="100">
 		</div>
-		<div class="img"><img src="image/7.jpg" width="450" height="80"></div>      
+		<div class="img"><!-- <img src="image/7.jpg" width="450" height="80"> -->
+              <img src="image/主页标题.png" width="550" height="100"></div>      
                   
                 <form method="post" action="selectProduct.do">
                         <div class="search">
@@ -50,16 +52,15 @@
 						</c:choose>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ￥${i.pcost } <br><br>
 						
-						<input type="hidden" value="${i.pid } name="pid" >
-					<input type="hidden" value="${user.uid } name="uid"> 
-						<input type="button" value="加入购入车" onclick="location.href='addCar.do'">
+						<input type="hidden" value="${i.pid }" name="pid" >
+					<input type="hidden" value="${user.uid }" name="uid"> 
+						<input type="button" value="加入购入车" onclick="location.href='addCar.do?pid=${i.pid}'">
 						<input type="button" value="收藏">
-						<!-- <a href="#">收藏</a>
-		                <a href="addCar.do">加入购物车</a> -->
 		              
 					</div>
-					 
+					
 				</c:forEach> 
+					 
 		</div>
 
 	</div>

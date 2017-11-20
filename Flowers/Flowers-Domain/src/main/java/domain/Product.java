@@ -85,7 +85,11 @@ public class Product implements Serializable{
 		this.type = type;
 		this.kind = kind;
 	}
-
+	public void getPid(int pid) {
+		// TODO Auto-generated method stub
+		this.pid=pid;
+	}
+	
 	public int getPid() {
 		return pid;
 	}
@@ -161,6 +165,10 @@ public class Product implements Serializable{
 				+ pcost + ", psnum=" + psnum + ", prnum=" + prnum + ", insertCost=" + insertCost + ", type=" + type
 				+ ", kind=" + kind + ", picture=" + picture + "]";
 	}
+
+	
+
+	
 
 	
 	

@@ -43,8 +43,8 @@ public class UserRepositoryImpl extends BaseDao implements UserRepository {
 	}
 
 	@Override
-	public User findById(int uid) {
-		ResultSet rs=(ResultSet) super.execute("select * from User where uid=?",uid);
+	public User findByUname(String uname) {
+		ResultSet rs=(ResultSet) super.execute("select * from User where uname=?",uname);
 		if(rs != null) {
 			try {
 				rs.next();
