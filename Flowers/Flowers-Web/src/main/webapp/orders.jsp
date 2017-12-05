@@ -6,11 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+<style type="text/css">
+.a{
+background-image: url("image/注册背景.jpg");
+}
+</style>
 </head>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <body>
-<div>
-<table border="1">
+<div class="a">
+<table border="1" >
 <tr >
 <td colspan="5" align="center"><h2>订单信息</h2></td>
 </tr>
@@ -33,7 +38,7 @@
 </tr>
 </c:forEach>
 </table>
-</div>
+
 <br><br><br>
 <table border="1">
 <tr >
@@ -54,5 +59,6 @@
 </tr>
 </c:forEach> 
 </table>
+</div>
 </body>
 </html>

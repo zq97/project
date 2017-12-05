@@ -41,15 +41,17 @@ public class AddCarServlet extends HttpServlet {
 		System.out.println(request.getParameter("pid"));
 //		product.getPid(Integer.valueOf(request.getParameter("pid")));
 		product.setPid(Integer.valueOf(request.getParameter("pid")));
-//		User user=new User();
-//		user.setUid(Integer.valueOf(request.getParameter("uid")));
+		System.out.println(request.getParameter("uid"));
+		User user=new User();
+		user.setUid(Integer.valueOf(request.getParameter("uid")));
 		Car car=new Car();
 		car.setNum(Integer.valueOf(1));
 		car.setProduct(product);
-//		car.setUser(user);
+		car.setUser(user);
 		System.out.println(car);
-		carRepository.add(car); 
-		response.sendRedirect("product.jsp");
+		carRepository.addUser(car); 
+//		response.sendRedirect("product.jsp");
+		request.getRequestDispatcher("showAllProduct.do?type=all").forward(request, response);
 
 		
 		
