@@ -39,7 +39,6 @@ public class AddCarServlet extends HttpServlet {
 		System.out.println("addcar.............................");
 		Product product=new Product();
 		System.out.println(request.getParameter("pid"));
-//		product.getPid(Integer.valueOf(request.getParameter("pid")));
 		product.setPid(Integer.valueOf(request.getParameter("pid")));
 		System.out.println(request.getParameter("uid"));
 		User user=new User();

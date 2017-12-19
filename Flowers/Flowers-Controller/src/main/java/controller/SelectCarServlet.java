@@ -33,12 +33,6 @@ public class SelectCarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		Car car=new Car();
-//		car.getProduct().getPname();
-//		car.getProduct().getPcost();
-//		car.getNum();
-//		request.setAttribute("car", car);
-//		request.getRequestDispatcher("car.jsp").forward(request, response);
 		List<Car> findAll = carRepository.findAll();
 		request.setAttribute("car", findAll);
 		System.out.println(findAll);

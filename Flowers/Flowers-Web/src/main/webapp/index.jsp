@@ -41,6 +41,7 @@
                     <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a>
                     <a href="order.do?type=find" rel="nofollow" onclick="return check()">查询订单</a>
                     <a href="selectCar.do" rel="nofollow" onclick="return check()" >查看购物车</a>
+                    <a href="collection.do?uname=${user.uname}" rel="nofollow" onclick="return check()">我的收藏</a>
                     <a href="user.jsp" rel="nofollow" onclick="return check()">个人中心</a>
                     <a href="exit.jsp" rel="nofollow" class="exit" style="display: none"  >退出登录</a>
                 </li>

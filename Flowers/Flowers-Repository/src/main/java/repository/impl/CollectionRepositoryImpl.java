@@ -14,9 +14,9 @@ import repository.CollectionRepository;
 public class CollectionRepositoryImpl extends BaseDao implements CollectionRepository {
 
 	@Override
-	public List<Collection> findAll() {
+	public List<Collection> findAll(String uname) {
 		List<Collection> collection = new ArrayList<>();
-		ResultSet rs = (ResultSet) super.execute("SELECT * FROM collection");
+		ResultSet rs = (ResultSet) super.execute("select p.pid,p.pname,p.pcost,pi.piname from product p,picture pi where ");
 		if (rs != null) {
 			try {
 				while (rs.next()) {
@@ -37,7 +37,7 @@ public class CollectionRepositoryImpl extends BaseDao implements CollectionRepos
 	}
 
 	@Override
-	public void add(Collection collection, User user, Product product) {
+	public void add(User user, Product product) {
 		super.execute("INSERT INTO collection(uid,pid) values(?,?)", user.getUid(), product.getPid());
 
 	}

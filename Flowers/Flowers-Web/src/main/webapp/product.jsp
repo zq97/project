@@ -54,28 +54,14 @@
 						
 						<input type="hidden" value="${i.pid }" name="pid" >
 					<input type="hidden" value="${user.uid }" name="uid"> 
-						<%-- <input type="button" value="加入购入车" onclick="location.href='addCar.do?pid=${i.pid}&uid=${user.uid }'"> --%>
-						<input type="button" value="加入购入车" onclick="check()">
-						<input type="button" value="收藏">
+						<input type="button" value="加入购入车" onclick="location.href='addCar.do?pid=${i.pid}&uid=${user.uid }'">
+						<input type="button" value="收藏" onclick="location.href='collection.do?type=add?pid=${i.pid}&uid=${user.uid }'">
 		              
 					</div>
 					
 				</c:forEach> 
 					 
 		</div>
-<input class="info" type="text" name="uname" style="display: none" value="${user.uname }" />
 	</div>
 </body>
-<script type="text/javascript">
-function  check(){
-	/* var info = $(".info").val();
-	if(info == ""){
-		alert("用户需先登录！！！");
-		
-	}else{
-		location.href="addCar.do?pid=${p.pid}&uid=${user.uid }";
-	} */
-	
-};
-</script>
 </html>

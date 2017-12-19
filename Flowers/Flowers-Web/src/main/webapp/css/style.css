@@ -11,6 +11,9 @@ clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .fl{float:left;}
 .fr{float:right;}
 
+
+
+
 .catbox{width:940px;margin:100px auto;}
 .catbox table{text-align:center;width:100%;}
 .catbox table th,.catbox table td{border:1px solid #CADEFF;}

@@ -12,19 +12,37 @@
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <body>
 <div class="total">
-    <div class="a">
-        <img src="image/5.jpg" />
+   <!--  <div class="a">
+        <img src="image/5.jpg" width="100%" height="100"/>
     </div>
 
     <div class="dd" align="right">
         <div class="d">
             <ul class="r" >
-                <li class="a" style="margin-right: 250px">
+                <li class="aa" style="margin-right: 250px">
                     <a href="login.jsp" rel="nofollow" >你好，请登录</a>
                     <a href="register.jsp" rel="nofollow" >注册</a>
                     <a href="#" rel="nofollow">查询订单</a>
                     <a href="car.jsp" rel="nofollow" >购物车</a>
                     <a href="user.jsp" rel="nofollow" >个人中心</a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <div>
+            <img src="image/主页顶端.jpg" width="100%" height="100">
+        </div>
+    <div class="dd" align="right">
+        <div class="d">
+            <ul class="r" >
+                <li class="a" style="margin-right: 250px">
+                    <a class="dl" href="login.jsp" rel="nofollow"  >你好，请登录</a>
+                    <a class="dl" href="register.jsp" rel="nofollow" >注册</a>
+                    <%-- <a class="hy" style="display: none" > 你好,欢迎  ${user.uname }</a> --%>
+                    <a href="order.do?type=find" rel="nofollow" onclick="return check()">查询订单</a>
+                    <a href="selectCar.do" rel="nofollow" onclick="return check()" >查看购物车</a>
+                    <a href="user.jsp" rel="nofollow" onclick="return check()">个人中心</a>
+                    <a href="exit.jsp" rel="nofollow" class="exit" style="display: none"  >退出登录</a>
                 </li>
             </ul>
         </div>
@@ -85,37 +103,6 @@
         <td class="operation"><span class="delete">删除</span></td>
       </tr> 
     </c:forEach>
-      
-      <tr>
-        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-        <td class="goods"><img src="images/2.jpg" alt=""/><span>Canon/佳能 PowerShot SX50 HS</span></td>
-        <td class="price">3888.50</td>
-        <td class="count"><span class="reduce"></span>
-          <input class="count-input" type="text" value="1"/>
-          <span class="add">+</span></td>
-        <td class="subtotal">3888.50</td>
-        <td class="operation"><span class="delete">删除</span></td>
-      </tr>
-      <tr>
-        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-        <td class="goods"><img src="images/3.jpg" alt=""/><span>Sony/索尼 DSC-WX300</span></td>
-        <td class="price">1428.50</td>
-        <td class="count"><span class="reduce"></span>
-          <input class="count-input" type="text" value="1"/>
-          <span class="add">+</span></td>
-        <td class="subtotal">1428.50</td>
-        <td class="operation"><span class="delete">删除</span></td>
-      </tr>
-      <tr>
-        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-        <td class="goods"><img src="images/4.jpg" alt=""/><span>Fujifilm/富士 instax mini 25</span></td>
-        <td class="price">640.60</td>
-        <td class="count"><span class="reduce"></span>
-          <input class="count-input" type="text" value="1"/>
-          <span class="add">+</span></td>
-        <td class="subtotal">640.60</td>
-        <td class="operation"><span class="delete">删除</span></td>
-      </tr>
     </tbody>
   </table>
   <div class="foot" id="foot">
@@ -130,7 +117,7 @@
         <div><img src="images/1.jpg"><span>取消选择</span></div>
       </div>
       <span class="arrow">◆<span>◆</span></span> </div>
-  </div>
+  </div> 
 </div>
 </div>
 </body>

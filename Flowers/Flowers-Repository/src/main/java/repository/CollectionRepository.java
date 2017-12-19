@@ -8,8 +8,8 @@ import domain.User;
 
 
 public interface CollectionRepository {
-	public void add(Collection collection,User user,Product product);
-	public List<Collection> findAll();
+	public void add(User user,Product product);
+	public List<Collection> findAll(String uname);
 	public void delete(int colid);
 
 
